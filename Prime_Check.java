@@ -6,6 +6,7 @@ public class Prime_Check {
 Scanner sc = new Scanner(System.in);
 System.out.println("Enter a number to check prime.");
 int n = sc.nextInt();
+boolean isPrime = true;
 if( n <= 1)
 {
 	System.out.println(n+" is not prime");
@@ -15,14 +16,19 @@ for(int i = 2; i*i <= n; i++)
 {
 	if(n%i == 0)
 	{
-		System.out.println(n+" is not prime");
+		isPrime = false;
+		break;
 		
 	}
-	else
-	{
-		System.out.println(n+" is prime");
-		
-	}
+
+}
+if(isPrime)
+{
+    System.out.println(n + " is prime");
+}
+else
+{
+    System.out.println(n + " is not prime");
 }
 	}
 
